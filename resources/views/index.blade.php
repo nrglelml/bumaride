@@ -5,14 +5,13 @@
     <title>Bum A Ride</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{asset('w3.css')}}">
+    <link rel="stylesheet" href="{{ asset('w3.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             font-family: "Lato", sans-serif
         }
-
     </style>
 </head>
 
@@ -21,38 +20,45 @@
     <!-- Navbar -->
     <div class="w3-top">
         <div class="w3-bar w3-indigo w3-card">
-            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="navigate()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0)" onclick="navigate()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+
             <div id="bumaride" class="navbar-brand w3-bar-item w3-button logo-image padding-1-12">
-                <img src="{{asset('images\logo2.png')}}" class="img-fluid">
+                <img src="{{ asset('images\logo2.png') }}" class="img-fluid">
                 Bum A Ride
             </div>
 
             <a href="/" id="logo">
                 <div class="navbar-brand w3-bar-item w3-button logo-image padding-1-12">
-                    <img src="{{asset('images\logo2.png')}}" class="img-fluid">
+                    <img src="{{ asset('images\logo2.png') }}" class="img-fluid">
                     Bum A Ride
                 </div>
             </a>
 
-            <a href="/giris" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">GİRİŞ YAP / KAYIT OL</a>
-            
-            <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+            <a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">GİRİŞ YAP / KAYIT
+                OL</a>
+
+            <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
+                    class="fa fa-search"></i></a>
         </div>
     </div>
 
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-    <div id="navDemo" class="w3-bar-block w3-indigo w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-        <a href="/giris" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()">GİRİŞ YAP / KAYIT OL</a>  
-        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()"><i class="fa fa-search"></i></a>
-        
+    <div id="navDemo" class="w3-bar-block w3-indigo w3-hide w3-hide-large w3-hide-medium w3-top"
+        style="margin-top:46px">
+        <a href="/login" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()">GİRİŞ YAP / KAYIT OL</a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()"><i
+                class="fa fa-search"></i></a>
+
     </div>
 
     <!-- Page content -->
     <div class="w3-content" style="max-width:2000px;margin-top:46px">
 
         <div class="w3-display-container w3-center">
-            <img src="{{asset('images\hitchhikerstock.jpg')}}" alt="Hitchhiker Image" style="width: 100%; height: 500px; object-fit: cover;">
+            <img src="{{ asset('images\hitchhikerstock.jpg') }}" alt="Hitchhiker Image"
+                style="width: 100%; height: 500px; object-fit: cover;">
             <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
                 <h3>Asprin yolu temsili değil</h3>
                 <p><b>Ahmet Kabaklı'ya kadar atar mısın abi?</b></p>
@@ -64,24 +70,30 @@
         <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="about">
             <h2 class="w3-wide">Biz Kimiz?</h2>
             <p class="w3-opacity"><i>Biz maceraseveriz</i></p>
-            <p class="w3-justify w3-center">Macera yolculuklarımızı daha kolay ve daha eğlenceli hale getirmek için bir site yapmaya karar verdik.</p>
+            <i class="fab fa-font-awesome"></i>
+            <p class="w3-justify w3-center">Macera yolculuklarımızı daha kolay ve daha eğlenceli hale getirmek için bir
+                site yapmaya karar verdik.</p>
             <div class="w3-row w3-padding-32">
                 <div class="w3-third">
                     <p>Mehmet Emin Çakın</p>
-                    <img src="{{asset('images\memin.jpeg')}}" class="w3-round w3-margin-bottom" alt="Memin Çakın" style="width:60%">
+                    <img src="{{ asset('images\memin.jpeg') }}" class="w3-round w3-margin-bottom" alt="Memin Çakın"
+                        style="width:60%">
                 </div>
                 <div class="w3-third">
                     <p>Nurgül Elmalı</p>
-                    <img src="{{asset('images\nurgül.jpeg')}}" class="w3-round w3-margin-bottom" alt="Nurgoş Elmalı" style="width:60%">
+                    <img src="{{ asset('images\nurgül.jpeg') }}" class="w3-round w3-margin-bottom" alt="Nurgoş Elmalı"
+                        style="width:60%">
                 </div>
                 <div class="w3-third">
                     <p>Deniz Akbay</p>
-                    <img src="{{asset('images\deniz.jpeg')}}" class="w3-round w3-margin-bottom" alt="Deniz 'SİGMA' Akbay" style="width:60%">
+                    <img src="{{ asset('images\deniz.jpeg') }}" class="w3-round w3-margin-bottom"
+                        alt="Deniz 'SİGMA' Akbay" style="width:60%">
                 </div>
                 <p class="w3-justify w3-center"> Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                     veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu
                     fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                     deserunt mollit anim id est laborum consectetur
                     adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -123,7 +135,7 @@
                     </li>
                 </ul>
 
-                
+
             </div>
         </div>
 
@@ -142,13 +154,16 @@
                     <form action="/action_page.php" target="_blank">
                         <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                             <div class="w3-half">
-                                <input class="w3-input w3-border" type="text" placeholder="İsim" required name="Name">
+                                <input class="w3-input w3-border" type="text" placeholder="İsim" required
+                                    name="Name">
                             </div>
                             <div class="w3-half">
-                                <input class="w3-input w3-border" type="text" placeholder="E-posta" required name="Email">
+                                <input class="w3-input w3-border" type="text" placeholder="E-posta" required
+                                    name="Email">
                             </div>
                         </div>
-                        <input class="w3-input w3-border" type="text" placeholder="Mesaj" required name="Message">
+                        <input class="w3-input w3-border" type="text" placeholder="Mesaj" required
+                            name="Message">
                         <button class="w3-button w3-black w3-section w3-right" type="submit">Gönder</button>
                     </form>
                 </div>
@@ -166,8 +181,7 @@
         <i class="fa fa-pinterest-p w3-hover-opacity"></i>
         <i class="fa fa-twitter w3-hover-opacity"></i>
         <i class="fa fa-linkedin w3-hover-opacity"></i>
-        <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-        </p>
+
     </footer>
 
     <script>
@@ -189,6 +203,8 @@
             }
         } */
     </script>
+    <script src="https://kit.fontawesome.com/b96ee86dee.js" crossorigin="anonymous"></script>
+
 
 </body>
 
