@@ -1995,9 +1995,13 @@ a {
 
 .logo-image img {
     border-radius: 50%;
+    height: 46px;
+    width: auto;
     overflow: hidden;
-    height: 20px;
-    width: 46px;
+}
+
+.padding-1-12 {
+    padding: 1px 12px 0px !important;
 }
 
 
@@ -2020,4 +2024,23 @@ summary:after {
 
 details[open] summary:after {
     content: "\00D7";
+}
+
+#bumaride {
+    visibility: hidden;
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    #logo {
+        visibility: hidden;
+        clear: both;
+        display: none;
+    }
+
+    #bumaride {
+        visibility: visible;
+        display: block;
+        align-items: center;
+    }
 }

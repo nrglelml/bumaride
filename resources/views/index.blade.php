@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>W3.CSS Template</title>
+    <title>Bum A Ride</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('w3.css')}}">
@@ -21,12 +21,20 @@
     <!-- Navbar -->
     <div class="w3-top">
         <div class="w3-bar w3-indigo w3-card">
-            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-            <a href="/" class="navbar-brand w3-bar-item w3-button w3-padding-large">
-                <div class="logo-image">
-                      <img src="{{asset('images\bumaride.png')}}" class="img-fluid">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="navigate()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            
+            <div id="bumaride" class="navbar-brand w3-bar-item w3-button logo-image padding-1-12">
+                <img src="{{asset('images\logo2.png')}}" class="img-fluid">
+                Bum A Ride
+            </div>
+
+            <a href="/" id="logo">
+                <div class="navbar-brand w3-bar-item w3-button logo-image padding-1-12">
+                    <img src="{{asset('images\logo2.png')}}" class="img-fluid">
+                    Bum A Ride
                 </div>
             </a>
+
             <a href="/giris" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">GİRİŞ YAP / KAYIT OL</a>
             
             <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
@@ -35,10 +43,9 @@
 
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
     <div id="navDemo" class="w3-bar-block w3-indigo w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-        <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
-        <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+        <a href="/giris" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()">GİRİŞ YAP / KAYIT OL</a>  
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()"><i class="fa fa-search"></i></a>
+        
     </div>
 
     <!-- Page content -->
@@ -83,7 +90,7 @@
         </div>
 
         <!-- The Sıkça Sorulan Sorular Section -->
-        <div class="w3-indigo" id="tour">
+        <div class="w3-indigo" id="sss">
             <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
                 <h2 class="w3-wide w3-center">Sıkça Sorulan Sorular (S.S.S)</h2>
                 <p class="w3-opacity w3-center"><i>Belki okuyan olur diye</i></p><br>
@@ -165,7 +172,7 @@
 
     <script>
         // Used to toggle the menu on small screens when clicking on the menu button
-        function myFunction() {
+        function navigate() {
             var x = document.getElementById("navDemo");
             if (x.className.indexOf("w3-show") == -1) {
                 x.className += " w3-show";
