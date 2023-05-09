@@ -36,8 +36,8 @@
                 </div>
             </a>
 
-            <a href="/login" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">GİRİŞ YAP / KAYIT
-                OL</a>
+            <a href="{{route('register')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">KAYIT OL</a>
+            <a href="{{route('login')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">GİRİŞ YAP</a>
 
             <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
                     class="fa fa-search"></i></a>
