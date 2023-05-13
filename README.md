@@ -18,7 +18,7 @@ Proje herhangi bir yolculukta kendine bir yol arkadaşı arayan ya da otostopla 
 
 
 
-<img>
+<img src="public/images/bumaride.png>
 
 ####HTML code
 
