@@ -23,3 +23,7 @@ Route::get('/login', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/profile', [\App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
+Route::post('/profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
