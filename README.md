@@ -18,7 +18,7 @@ Proje herhangi bir yolculukta kendine bir yol arkadaşı arayan ya da otostopla 
 
 
 
-<img src="public/images/otostop.jpg>
+<img src="public/images/otostop.jpg"
 
 ####HTML code
 
