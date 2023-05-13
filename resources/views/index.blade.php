@@ -76,18 +76,18 @@
             <div class="w3-row w3-padding-32">
                 <div class="w3-third">
                     <p>Mehmet Emin Çakın</p>
-                    <img src="{{ asset('images\memin.jpeg') }}" class="w3-round w3-margin-bottom" alt="Memin Çakın"
+                    <img src="{{ asset('images\mehmet.jpg') }}" class="w3-round w3-margin-bottom" alt="Memin Çakın"
                         style="width:60%">
                 </div>
                 <div class="w3-third">
                     <p>Nurgül Elmalı</p>
-                    <img src="{{ asset('images\nurgül.jpeg') }}" class="w3-round w3-margin-bottom" alt="Nurgoş Elmalı"
+                    <img src="{{ asset('images\nurgul.png') }}" class="w3-round w3-margin-bottom" alt="Nurgül Elmalı"
                         style="width:60%">
                 </div>
                 <div class="w3-third">
                     <p>Deniz Akbay</p>
-                    <img src="{{ asset('images\deniz.jpeg') }}" class="w3-round w3-margin-bottom"
-                        alt="Deniz 'SİGMA' Akbay" style="width:60%">
+                    <img src="{{ asset('images\deniz.jpg') }}" class="w3-round w3-margin-bottom"
+                        alt="Deniz Akbay" style="width:60%">
                 </div>
                 <p class="w3-justify w3-center"> Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
