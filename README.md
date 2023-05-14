@@ -89,9 +89,9 @@ Proje herhangi bir yolculukta kendine bir yol arkadaşı arayan ya da otostopla 
 <p>
 # Proje yöneticileri iletişim bilgileri : <br>
 <ul>
-<li> Mehmet Emin Çakın <a href="mailto:210290060@firat.edu.tr" 210290060@firat.edu.tr </a> </li>
-<li> Nurgül Elmalı <a href="mailto:200290061@firat.edu.tr" 200290061@firat.edu.tr </a> </li>
-<li> Deniz Akbay <a href="mailto:210290054@firat.edu.tr" 200290054@firat.edu.tr </a> </li>
+<li> Mehmet Emin Çakın <a href="mailto:210290060@firat.edu.tr"> 210290060@firat.edu.tr </a> </li>
+<li> Nurgül Elmalı <a href="mailto:200290061@firat.edu.tr"> 200290061@firat.edu.tr </a> </li>
+<li> Deniz Akbay <a href="mailto:210290054@firat.edu.tr"> 200290054@firat.edu.tr </a> </li>
 </ul>
 </p>
     
