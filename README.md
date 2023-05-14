@@ -8,11 +8,14 @@ Proje herhangi bir yolculukta kendine bir yol arkadaşı arayan ya da otostopla 
 
 ##Hedef Kitle ve Okuma Tavsiyeleri
 <p>
-•	Otostop yaparak yolculuk yapmak isteyen yolcular
-•	Arabasına katkı olsun diye yolcu almak isteyen şöförler
-•	Tasarımcı
-•	Programcı
-•	Testçi
+ <ul>
+ <li> •	Otostop yaparak yolculuk yapmak isteyen yolcular </li>
+ <li> •	Arabasına katkı olsun diye yolcu almak isteyen şöförler </li>
+ <li> •	Tasarımcı </li>
+ <li> •	Programcı </li>
+ <li> •	Testçi </li>
+ </ul>
+
 </p>
 ##Ürün Kapsamı
 •	Daha kolay bir şekilde yolcu ve yolculuk bulma
