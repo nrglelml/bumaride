@@ -19,15 +19,39 @@ Proje herhangi bir yolculukta kendine bir yol arkadaşı arayan ya da otostopla 
  </ul>
 
 </p>
+
 ##Ürün Kapsamı
 <p>
   <ul>
   <li> •	Daha kolay bir şekilde yolcu ve yolculuk bulma </li>
   <li> •	Yolcular ya da şoförler hakkında yorum yaparak güvenli ortam oluşturma </li>
   <li> •	Konum bilgisi kullanarak yolcuların yerini kolaylıkla tespit edebilme </li>
+  </ul>
+</p>
+   
 
 
 
 <img src="public/images/otostop.jpg" width="120" heigt="120">
+      
+##Seyahat Oluşturma Senaryosu;
+ <p>
+ <ul>
+<li> •	Kullanıcı tarih ve güzergah bilgisini seçer ve arama tuşuna basar </li>
+<li> •	Sistem uygun seferlerin listesini getirir </li>
+<li> •	Müşteri isteğine uygun seferi seçer </li>
+<li> •	Sistem uygun sefere ait kullanıcının seyahat için oluşturduğu bilgileri gösterir. </li>
+<li> •	Kullanıcı şartları onaylamazsa başka seferler aramak için ana sayfaya döner. </li>
+<li> •	Kullanıcı şartları onaylarsa iletişime geçer.</li>
+<li> •	Sistem seyahati oluşturan kullanıcıya bildirim gönderip diğer kullanıcıyı onaylama izni ister. </li>
+<li> •	Kullanıcılar mesaj sistemiyle iletişim kurarlar. </li>
+<li> •	Sistem, seyahat bilgisini veri tabanına kaydeder </li>
+<li> •	Kullanıcılar artık istedikleri iletişim araçlarıyla birbirlerine ulaşıp yolculuğu yaparlar. </li>
+<li> •	Kullanıcı diğer kullanıcıdan memnun olmadıysa yorum yapabilir, şikayet hatlarına başvurabilir veya sitenin değerlendirme kısmına şikayetini yazabilir</li>
+ </ul>
+</p>
+
+ <img src="public/images/otostop2.jpg" width="120" heigt="120">
+      
 
 
