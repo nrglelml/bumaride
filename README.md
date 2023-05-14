@@ -18,9 +18,11 @@ Proje herhangi bir yolculukta kendine bir yol arkadaşı arayan ya da otostopla 
 
 </p>
 ##Ürün Kapsamı
-•	Daha kolay bir şekilde yolcu ve yolculuk bulma
-•	Yolcular ya da şoförler hakkında yorum yaparak güvenli ortam oluşturma
-•	Konum bilgisi kullanarak yolcuların yerini kolaylıkla tespit edebilme
+<p>
+  <ul>
+  <li> •	Daha kolay bir şekilde yolcu ve yolculuk bulma </li>
+  <li> •	Yolcular ya da şoförler hakkında yorum yaparak güvenli ortam oluşturma </li>
+  <li> •	Konum bilgisi kullanarak yolcuların yerini kolaylıkla tespit edebilme </li>
 
 
 
