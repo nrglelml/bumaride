@@ -51,7 +51,8 @@ Proje herhangi bir yolculukta kendine bir yol arkadaşı arayan ya da otostopla 
  </ul>
 </p>
 
- <img src="public/images/otostop2.jpg" width="120" heigt="120">
+ <img src="public/images/otostop2.jpg" width="120" heigt="120"> <br>
+ <a href=""> Proje bittikten sonra website linki paylaşılacaktır. </a>
       
 
 
