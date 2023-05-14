@@ -2,7 +2,7 @@
 
 ------------
 
-BUM A RİDE KULLANICI DOSTU BİR OTOSTOP PROJESİDİR
+BUM A RİDE KULLANICI DOSTU BİR OTOSTOP PROJESİDİR         <img src="public/images/otostop3.jpg" width="50" heigt="50"> 
 ### AMAÇ 
 Proje herhangi bir yolculukta kendine bir yol arkadaşı arayan ya da otostopla seyahat eden kullanıcılara kolaylıkla bulabileceği bir araç bulup yolculuk yapmayı kolaylaştıracaktır. Kullanıcılar güvenli bir şekilde yolculuk yaptıktan sonra yol arkadaşları hakkında değerlendirme de bulunabilecek ve bu da güvenliği arttıracaktır.
 
