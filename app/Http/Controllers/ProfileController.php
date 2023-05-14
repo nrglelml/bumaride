@@ -3,37 +3,52 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
-    // Profil düzenleme sayfasını görüntüler
-    public function edit()
-    {
+    public function edit(){
         return view('profile');
     }
-
-    // Profil bilgilerini günceller
+    // Hesap bilgilerini güncelleme
     public function update(Request $request)
     {
         $user = auth()->user();
 
-        // Form verilerini doğrula
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
+        $request->validate([
+            'username' => 'required|string|max:255|unique:users,username,' . $user->id,
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+            'password' => 'nullable|string|min:8|confirmed',
         ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+        $user->username = $request->username;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->phone = $request->phone;
+
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
         }
 
-        // Kullanıcının ad ve e-posta bilgilerini güncelle
-        $user->name = $request->name;
-        $user->email = $request->email;
         $user->save();
 
-        return redirect()->back()->with('success', 'Profil bilgileriniz güncellendi.');
+        return redirect()->back()->with('success', 'Hesap bilgileri güncellendi.');
+    }
+
+    // Hesabı silme
+    public function destroy()
+    {
+        $user = auth()->user();
+
+        // Hesabı silme işlemleri burada gerçekleştirilebilir
+        // Örneğin, ilişkili kayıtların silinmesi veya kullanıcının devre dışı bırakılması
+
+        // Kullanıcıyı oturumdan çıkış yap ve hesabı sil
+        auth()->logout();
+        $user->delete();
+
+        return redirect('/')->with('success', 'Hesabınız başarıyla silindi.');
     }
 }
