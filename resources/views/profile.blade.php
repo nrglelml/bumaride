@@ -55,12 +55,12 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Telefon') }}</label>
+                                <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Telefon') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') ?? auth()->user()->phone }}" required autocomplete="phone">
+                                    <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') ?? auth()->user()->phone_number }}" required autocomplete="phone_number">
 
-                                    @error('phone')
+                                    @error('phone_number')
                                     <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

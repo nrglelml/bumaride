@@ -16,12 +16,12 @@
 
                                 <div class="col-md-6">
                                     <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                    @if ($errors->has('username'))
+                                        <span class="invalid-feedback" role="alert">
+                                     <strong>{{ $errors->first('username') }}</strong>
+                                         </span>
+                                    @endif
 
-                                    @error('username')
-                                    <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-                                    @enderror
                                 </div>
                             </div>
 
@@ -33,8 +33,8 @@
 
                                     @error('first_name')
                                     <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+                                          <strong>{{ $message }}</strong>
+                                     </span>
                                     @enderror
                                 </div>
                             </div>
@@ -47,23 +47,23 @@
 
                                     @error('last_name')
                                     <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+                                       <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="phone"
+                                <label for="phone_number"
                                        class="col-md-4 col-form-label text-md-end">{{ __('Telefon Numarası') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="phone" type="tel"
-                                           class="form-control @error('phone') is-invalid @enderror" name="phone"
-                                           value="{{ old('phone') }}" required autocomplete="phone"
-                                           pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" placeholder="555 555 55 55">
+                                    <input id="phone_number" type="tel"
+                                           class="form-control @error('phone_number') is-invalid @enderror" name="phone_number"
+                                           value="{{ old('phone_number') }}" required autocomplete="phone_number"
+                                           pattern="[0-9]{10}" placeholder="5555555555">
 
-                                    @error('phone')
+                                    @error('phone_number')
                                     <span class="invalid-feedback" role="alert">
                                      <strong>{{ $message }}</strong>
                                        </span>
@@ -106,6 +106,9 @@
                                     </button>
                                 </div>
                             </div>
+                            <br>
+                            Hesabın var mı?
+                            <a href="{{route('login')}}">Giriş Yap</a>
                         </form>
                     </div>
                 </div>
