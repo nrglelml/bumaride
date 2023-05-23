@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,10 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get('/', function () {
     return view('index');
 })->name('index');
+
 Route::get('/login', function () {
-    return view('login');
-});
+    return view('auth.login');
+})->name('login');
 
 Route::get('/register', function () {
     return view('auth.register');
@@ -39,3 +41,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/register/create', [RegisterController::class, 'create'])->name('register.create');
 Route::post('/register/store', [RegisterController::class, 'store'])->name('register.store');
+/*
+Route::get('/login', [LoginController::class, '__construct'])
+    ->middleware('guest')
+    ->name('login');
+
+Route::post('/login', [LoginController::class, '__construct'])
+    ->middleware('guest');
+*/
