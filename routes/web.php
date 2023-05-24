@@ -33,7 +33,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/profile/edit', [\App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
 Route::post('/profile/update', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
-Route::get('/profile/destroy',[\App\Http\Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::delete('/profile/destroy',[\App\Http\Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
+
 
 Auth::routes();
 
@@ -41,11 +42,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/register/create', [RegisterController::class, 'create'])->name('register.create');
 Route::post('/register/store', [RegisterController::class, 'store'])->name('register.store');
-/*
-Route::get('/login', [LoginController::class, '__construct'])
-    ->middleware('guest')
-    ->name('login');
 
-Route::post('/login', [LoginController::class, '__construct'])
-    ->middleware('guest');
-*/
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
