@@ -1,3 +1,5 @@
+@extends('layouts.app')
+    @section('content')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,41 +19,7 @@
 
 <body>
 
-    <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-indigo w3-card">
-            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
-                href="javascript:void(0)" onclick="navigate()" title="Toggle Navigation Menu"><i
-                    class="fa fa-bars"></i></a>
 
-            <div id="bumaride" class="navbar-brand w3-bar-item w3-button logo-image padding-1-12">
-                <img src="{{ asset('images\logo2.png') }}" class="img-fluid">
-                Bum A Ride
-            </div>
-
-            <a href="/" id="logo">
-                <div class="navbar-brand w3-bar-item w3-button logo-image padding-1-12">
-                    <img src="{{ asset('images\logo2.png') }}" class="img-fluid">
-                    Bum A Ride
-                </div>
-            </a>
-
-            <a href="{{route('register')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">KAYIT OL</a>
-            <a href="{{route('login')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">GİRİŞ YAP</a>
-
-            <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
-                    class="fa fa-search"></i></a>
-        </div>
-    </div>
-
-    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-    <div id="navDemo" class="w3-bar-block w3-indigo w3-hide w3-hide-large w3-hide-medium w3-top"
-        style="margin-top:46px">
-        <a href="/login" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()">GİRİŞ YAP / KAYIT OL</a>
-        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()"><i
-                class="fa fa-search"></i></a>
-
-    </div>
 
     <!-- Page content -->
     <div class="w3-content" style="max-width:2000px;margin-top:46px">
@@ -209,3 +177,4 @@
 </body>
 
 </html>
+@endsection

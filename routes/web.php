@@ -14,9 +14,10 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/', function () {
+Route::match(['get', 'post'], '/', function () {
     return view('index');
 })->name('index');
+
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -25,6 +26,10 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
+
+Route::get('/tripsearch', function () {
+    return view('tripsearch');
+})->name('tripsearch');
 
 Auth::routes();
 
@@ -40,10 +45,23 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/register/create', [RegisterController::class, 'create'])->name('register.create');
-Route::post('/register/store', [RegisterController::class, 'store'])->name('register.store');
 
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::middleware(['guest'])->group(function () {
+    // Oturum açma rotası
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
+
+
+    // Kayıt olma rotası
+
+    Route::get('/register/create', [RegisterController::class, 'create'])->name('register.create');
+    Route::post('/register/store', [RegisterController::class, 'store'])->name('register.store');
+
+});
+
+Route::middleware(['auth'])->group(function () {
+    // Çıkış yapma rotası
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+});
