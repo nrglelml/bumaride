@@ -56,6 +56,9 @@
                     <a href="{{ route('tripsearch') }}" class="btn btn-outline-primary" role="button" aria-pressed="true">Yolculuk Ara</a>
                 @endif
                 @guest
+                   <!-- @if(Route::currentRouteName() === 'login' || Route::currentRouteName() === 'register' )
+                        <a href="{{ route('index') }}" class="btn btn-outline-primary" role="button" aria-pressed="true">Ana Sayfa</a>
+                    @endif-->
                     @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Giriş Yap') }}</a>
@@ -86,7 +89,7 @@
                             <form id="logout-form-journeys" action="{{ route('index') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                            <a class="dropdown-item" href="{{ route('index') }}">
+                            <a class="dropdown-item" href="{{ route('home') }}">
                                 {{ __('Profilim') }}
                             </a>
                             <form id="logout-form-profile" action="{{ route('index') }}" method="POST" class="d-none">

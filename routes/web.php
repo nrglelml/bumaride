@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,10 +37,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/profile/edit', [\App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
-Route::post('/profile/update', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
-Route::delete('/profile/destroy',[\App\Http\Controllers\ProfileController::class, 'destroy'])->name('profile.destroy');
 
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::put('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
+Route::delete('/profile/delete', [ProfileController::class, 'deleteAccount'])->name('profile.delete');
+Route::get('/profile/about', [ProfileController::class, 'viewAbout'])->name('profile.about');
+Route::get('/profile/comments', [ProfileController::class, 'viewComments'])->name('profile.comments');
 
 Auth::routes();
 
