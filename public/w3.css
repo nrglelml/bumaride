@@ -130,7 +130,6 @@ hr {
 }
 
 button,
-input,
 select,
 textarea,
 optgroup {
@@ -142,8 +141,7 @@ optgroup {
     font-weight: bold
 }
 
-button,
-input {
+button {
     overflow: visible
 }
 
@@ -2029,6 +2027,59 @@ details[open] summary:after {
 #bumaride {
     visibility: hidden;
     display: none;
+}
+
+form.nosubmit {
+    border: 0;
+    padding: 0;
+}
+
+input.nosubmit {
+    width: 260px;
+    border: 0px;
+    display: block;
+    padding: 9px 4px 9px 40px;
+}
+
+input.nosubmit.departure {
+    background: transparent url("images/map-pin.svg") no-repeat 13px center;
+}
+
+input.nosubmit.target {
+    background: transparent url("images/target.svg") no-repeat 13px center;
+}
+
+input.nosubmit.date {
+    background: transparent url("images/date.svg") no-repeat 13px center;
+}
+
+.search-btn {
+    -webkit-border-radius: 30;
+    -moz-border-radius: 30;
+    border-radius: 30px;
+    background: #3f51b5;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.search-btn:hover {
+    background: #5468c9;
+    text-decoration: none;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.banner-text {
+    font-size: 80pt;
+    letter-spacing: 4pt;
+    -webkit-text-stroke: 3px black;
+
 }
 
 @media screen and (max-width: 600px) {
