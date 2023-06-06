@@ -37,14 +37,21 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => 'profile'], function() {
+    Route::get('/', [ProfileController::class, 'index'])->name('profile');
+    Route::put('/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
+    Route::delete('/deleteImage' ,[ProfileController::class , 'updateProfile'])->name('profile.update');
+    Route::delete('/delete', [ProfileController::class, 'deleteAccount'])->name('profile.delete');
+    Route::get('/about', [ProfileController::class, 'viewAbout'])->name('profile.about');
+    Route::get('/comments', [ProfileController::class, 'viewComments'])->name('profile.comments');
+    Route::post('/upload', [ProfileController::class, 'uploadProfileImage'])->name('profile.uploadImage');
+    Route::delete('/deleteImage', [ProfileController::class, 'deleteProfileImage'])->name('profile.deleteImage');
+    Route::put('/update-password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
 
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::put('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
-Route::delete('/profile/delete', [ProfileController::class, 'deleteAccount'])->name('profile.delete');
-Route::get('/profile/about', [ProfileController::class, 'viewAbout'])->name('profile.about');
-Route::get('/profile/comments', [ProfileController::class, 'viewComments'])->name('profile.comments');
+});
 
-Auth::routes();
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
