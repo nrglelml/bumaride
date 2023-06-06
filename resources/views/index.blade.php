@@ -4,7 +4,7 @@
     <html lang="en">
 
     <head>
-        <title>Bum A Ride</title>
+        <title>{{ config('app.name', 'Bum a Ride') }}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ asset('w3.css') }}">
@@ -59,71 +59,34 @@
 
             </div>
 
-            <!-- The Hakkımızda Section -->
-            <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="about">
-                <h2 class="w3-wide">Biz Kimiz?</h2>
-                <p class="w3-opacity"><i>Biz maceraseveriz</i></p>
-                <i class="fab fa-font-awesome"></i>
-                <p class="w3-justify w3-center">Macera yolculuklarımızı daha kolay ve daha eğlenceli hale getirmek için bir
-                    site yapmaya karar verdik.</p>
-                <div class="w3-row w3-padding-32">
-                    <div class="w3-third">
-                        <p>Mehmet Emin Çakın</p>
-                        <img src="{{ asset('images\mehmet.jpg') }}" class="w3-round w3-margin-bottom"
-                            alt="Mehmet Emin Çakın" style="width:60%">
-                    </div>
-                    <div class="w3-third">
-                        <p>Nurgül Elmalı</p>
-                        <img src="{{ asset('images\nurgul.png') }}" class="w3-round w3-margin-bottom" alt="Nurgül Elmalı"
-                            style="width:60%">
-                    </div>
-                    <div class="w3-third">
-                        <p>Deniz Akbay</p>
-                        <img src="{{ asset('images\deniz.jpg') }}" class="w3-round w3-margin-bottom" alt="Deniz Akbay"
-                            style="width:60%">
-                    </div>
-                    <p class="w3-justify w3-center"> Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum consectetur
-                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-            </div>
 
             <!-- The Sıkça Sorulan Sorular Section -->
             <div class="w3-indigo" id="sss">
                 <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
                     <h2 class="w3-wide w3-center">Sıkça Sorulan Sorular (S.S.S)</h2>
-                    <p class="w3-opacity w3-center"><i>Belki okuyan olur diye</i></p><br>
-
-
                     <ul class="w3-ul w3-border w3-white w3-text-grey">
                         <li class="w3-padding">
                             <details>
-                                <summary>Nasıl şeyi şey yapabilirim?</summary>
-                                > Abi onu şeyden <em>şöyle</em> yapacan.
+                                <summary>Nasıl yolculuk paylaşımı ilanı veririm?</summary>
+                                > BumaRide'da bir yolculuk paylaşımı ilanı vermek kolaydır. Yolculuğunuz için <em><a href="{{route('helpcenter')}}"> daha fazlası için yardım merkezi </a> </em>
                             </details>
                         </li>
                         <li class="w3-padding">
                             <details>
-                                <summary>Nasıl şeyi şey yapabilirim?</summary>
-                                > Abi onu şeyden <em>şöyle</em> yapacan.
+                                <summary>Yolculuk paylaşımı yolculuğumu nasıl iptal edebilirim?</summary>
+                                > Eğer planlarında bir değişiklik olduysa sitemizin "Yolculuklarınız" bölümünden yolculuk paylaşımlı <em><a href="{{route('helpcenter')}}"> daha fazlası için yardım merkezi </a> </em>
                             </details>
                         </li>
                         <li class="w3-padding">
                             <details>
-                                <summary>Nasıl şeyi şey yapabilirim?</summary>
-                                > Abi onu şeyden <em>şöyle</em> yapacan.
+                                <summary>Yolculuk paylaşımına nasıl başlayabilirim?</summary>
+                                > BumaRide ile yolculuk paylaşımı çok kolay ve ücretsizdir! Tek yapman gereken  <em><a href="{{route('helpcenter')}}"> daha fazlası için yardım merkezi</a> </em>
                             </details>
                         </li>
                         <li class="w3-padding">
                             <details>
-                                <summary>Nasıl şeyi şey yapabilirim?</summary>
-                                > Abi onu şeyden <em>şöyle</em> yapacan.
+                                <summary>Yolculuk paylaşımı ile seyahat etmenin avantajları nelerdir?</summary>
+                                > Yolculuk paylaşımının diğer seyahat yöntemleri karşısında çok sayıda avantajı vardır. Yolculuk paylaşımı ile <em><a href="{{route('helpcenter')}}"> daha fazlası için yardım merkezi </a> </em>
                             </details>
                         </li>
                     </ul>
@@ -136,26 +99,26 @@
             <!-- The İletişim Section -->
             <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
                 <h2 class="w3-wide w3-center">İletişim</h2>
-                <p class="w3-opacity w3-center"><i>Numaramı istesen verirdim</i></p>
+                <p class="w3-opacity w3-center"><i>Sorunuz Mu Var?</i></p>
                 <div class="w3-row w3-padding-32">
                     <div class="w3-col m6 w3-large w3-margin-bottom">
-                        <i class="fa fa-map-marker" style="width:30px"></i> İZMİR BUCAAAAA<br>
-                        <i class="fa fa-phone" style="width:30px"></i> Telefon: +00 151515<br>
-                        <i class="fa fa-envelope" style="width:30px"> </i> E-posta: BucaLeeKral_35@hotmail.com<br>
+                        <i class="fa fa-map-marker" style="width:30px"></i> İZMİR BUCA<br>
+                        <i class="fa fa-phone" style="width:30px"></i> Telefon: +090 555 555 55 55<br>
+                        <i class="fa fa-envelope" style="width:30px"> </i> E-posta:200290061@firat.edu.tr <br>
                     </div>
                     <div class="w3-col m6">
                         <form action="/action_page.php" target="_blank">
                             <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                                 <div class="w3-half">
-                                    <input class="w3-input w3-border" type="text" placeholder="İsim" required
+                                    <input class="w3-input w3-border" type="text" placeholder="İsminiz" required
                                         name="Name">
                                 </div>
                                 <div class="w3-half">
-                                    <input class="w3-input w3-border" type="text" placeholder="E-posta" required
+                                    <input class="w3-input w3-border" type="text" placeholder="E-postanız" required
                                         name="Email">
                                 </div>
                             </div>
-                            <input class="w3-input w3-border" type="text" placeholder="Mesaj" required
+                            <input class="w3-input w3-border" type="text" placeholder="Mesajınız" required
                                 name="Message">
                             <button class="w3-button w3-black w3-section w3-right" type="submit">Gönder</button>
                         </form>
@@ -166,16 +129,6 @@
             <!-- End Page Content -->
         </div>
 
-        <!-- Footer -->
-        <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-            <i class="fa fa-facebook-official w3-hover-opacity"></i>
-            <i class="fa fa-instagram w3-hover-opacity"></i>
-            <i class="fa fa-snapchat w3-hover-opacity"></i>
-            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-            <i class="fa fa-twitter w3-hover-opacity"></i>
-            <i class="fa fa-linkedin w3-hover-opacity"></i>
-
-        </footer>
 
         <script>
             // Used to toggle the menu on small screens when clicking on the menu button
