@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Config;
 
 class mailController extends Controller
 {
@@ -23,18 +24,21 @@ class mailController extends Controller
             'surname' => $surname,
             'message' => $message,
         ];
-        config(['mail.from.name' => 'bumaride ' . $name . ' ' . $surname]);
+        Config::set('mail.from.address', $email);
+        Config::set('mail.from.name', 'bumaride ' . $name . ' ' . $surname);
+
 
         try {
             Mail::send('contactus', $data, function ($message) use ($email, $request) {
                 $subject = $request->input('message');
                 $message->to('nurgul14102002@gmail.com')->subject($subject);
-                $message->from($email);
+                $message->from(config('mail.from.address'), config('mail.from.name'));
+
                 if (empty($subject)) {
-                    $subject = 'No Subject';
+                    $subject = 'Konu yok';
                 }
 
-                $message->to($email)->subject($subject);
+                $message->to('nurgul14102002@gmail.com')->subject($subject);
             });
 
             return redirect()->back()->with('success', 'Mail başarıyla gönderildi. En kısa zamanda yanıtlanacak:).');
@@ -43,3 +47,4 @@ class mailController extends Controller
         }
     }
 }
+

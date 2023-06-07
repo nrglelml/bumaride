@@ -51,7 +51,7 @@ Route::get('/aboutus',[HomeController::class ,'aboutus'])->name('aboutus');
 Route::get('/howitworks',[HomeController::class ,'howitworks'])->name('howitworks');
 
 
-Route::get('/send' ,[mailController::class , 'send'])->name('send');
+
 Route::post('/send' ,[mailController::class , 'send'])->name('send');
 
 Route::middleware(['guest'])->group(function () {

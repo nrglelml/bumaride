@@ -54,7 +54,7 @@
     <p>Amacımız, yolcuların güvenli ve uygun maliyetli bir şekilde seyahat etmelerini sağlamak ve aynı zamanda trafik yoğunluğunu ve karbon salınımını azaltmaya katkıda bulunmaktır.</p>
     <p>BumaRide, kullanıcıların yolculuklarını yayınlamalarına, rezervasyon yapmalarına ve iletişim kurmalarına olanak tanır. Kullanıcılar, yolculuklarını planlamak, boş koltuklarını paylaşmak ve yeni insanlarla tanışmak için platformu kullanabilirler.</p>
     <p>Ekip olarak, insanların daha sürdürülebilir bir ulaşım seçeneği sunmalarını teşvik etmek ve paylaşım ekonomisine katkıda bulunmak için çalışıyoruz.</p>
-    <<p style="text-align: center; font-size: 24px; margin-bottom: 10px; opacity: 0.7;">Soldan sağa:</p>
+    <p style="text-align: center; font-size: 24px; margin-bottom: 10px; opacity: 0.7;">Soldan sağa:</p>
     <p style="text-align: center;"><strong style="font-size: 18px; opacity: 0.8;">Mehmet Emin Çakın, (Grup Lideri); Nurgül Elmalı; Deniz Akbay</strong></p>
     <div style="text-align: center;">
         <img decoding="async" loading="lazy" src="{{ asset('images/mehmet.jpg') }}" alt="Mehmet Emin Çakın" width="100" height="80" style="display: inline-block;">

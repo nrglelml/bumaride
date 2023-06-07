@@ -27,7 +27,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style=" background-color: transparent !important;">
 
         <a href="/" id="logo">
             <div class="navbar-brand w3-bar-item w3-button logo-image padding-1-12">
@@ -55,9 +55,8 @@
                 <a href="{{ route('tripsearch') }}" class="btn btn-outline-primary" role="button" aria-pressed="true">Yolculuk Ara</a>
 
                 @guest
-                    <!-- @if(Route::currentRouteName() === 'login' || Route::currentRouteName() === 'register' )
-                        <a href="{{ route('index') }}" class="btn btn-outline-primary" role="button" aria-pressed="true">Ana Sayfa</a>
-                    @endif-->
+                    <!-- Giriş Yapılmamışsa-->
+
                         @if (Route::has('login'))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Giriş Yap') }}</a>
@@ -70,6 +69,7 @@
                             </li>
                         @endif
                     @else
+                        <!-- Giriş Yapılmışsa-->
                         <div class="navbar-brand w3-bar-item w3-button logo-image padding-1-12">
                             @if (Auth::user()->profile_image)
                                 <img src="{{ asset('storage/' . Auth::user()->profile_image) }}" class="img-fluid">
@@ -123,6 +123,43 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <!-- Footer -->
+@guest
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+            <div class="col mb-3">
+                <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <p class="text-body-secondary">© BumaRide</p>
+            </div>
+
+            <div class="col mb-3">
+
+            </div>
+            <div class="col mb-3">
+                <h5>En sık kullanılan güzergahlar</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Istanbul → Ankara</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Istanbul → Antalya</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Ankara→ Eskişehir</a></li>
+                    <li class="nav-item mb-2"><a href="{{route('tripsearch')}}" class="nav-link p-0 text-body-secondary">Yolculuk Ara</a></li>
+                    <li class="nav-item mb-2"><a href="{{route('index')}}" class="nav-link p-0 text-body-secondary">Yolculuk Oluştur</a></li>
+                </ul>
+            </div>
+            <div class="col mb-3">
+                <h5>Hakkında</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="{{route('howitworks')}}" class="nav-link p-0 text-body-secondary">BumaRide Nasıl Çalışır?</a></li>
+                    <li class="nav-item mb-2"><a href="{{route('aboutus')}}" class="nav-link p-0 text-body-secondary">Hakkımızda</a></li>
+                    <li class="nav-item mb-2"><a href="{{route('helpcenter')}}" class="nav-link p-0 text-body-secondary">Yardım Merkezi</a></li>
+                    <li class="nav-item mb-2"><a href="{{route('contactus')}}" class="nav-link p-0 text-body-secondary">Bize Ulaşın</a></li>
+                </ul>
+            </div>
+
+
+        </footer>
+    </div>
+@else
 <div class="container">
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
         <div class="col mb-3">
@@ -158,5 +195,6 @@
 
     </footer>
 </div>
+@endguest
 </body>
 </html>

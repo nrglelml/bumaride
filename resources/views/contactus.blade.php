@@ -9,14 +9,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 
     <style>
-        .my-div {
+        .my-div
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: 'Quicksand', sans-serif;
         }
-
+        {
         height: 100vh;
         width: 100%;
         }
@@ -131,6 +131,7 @@
                 height: 200px;
             }
         }
+
     </style>
 
 
@@ -147,7 +148,6 @@
                     <input type="text" class="field" placeholder="Adınız" name="name">
                     <input type="text" class="field" placeholder="Soyadınız" name="surname">
                     <input type="text" class="field" placeholder="Email'iniz" name="email">
-                    <input type="text" class="field" placeholder="Konu" name="subject">
                     <textarea name="message" class="field" placeholder="Mesajınız"></textarea>
                     <button type="submit" class="btn">Gönder</button>
                 </form>
