@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\mailController;
+use App\Http\Controllers\footerController;
 
 
 Route::match(['get', 'post'], '/', function () {
@@ -45,10 +46,7 @@ Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => 'profile'], fun
 });
 
 
-Route::get('/helpcenter',[HomeController::class ,'helpcenter'])->name('helpcenter');
-Route::get('/contactus',[HomeController::class ,'contactus'])->name('contactus');
-Route::get('/aboutus',[HomeController::class ,'aboutus'])->name('aboutus');
-Route::get('/howitworks',[HomeController::class ,'howitworks'])->name('howitworks');
+
 
 
 
@@ -62,6 +60,11 @@ Route::middleware(['guest'])->group(function () {
 
     Route::get('/register/create', [RegisterController::class, 'create'])->name('register.create');
     Route::post('/register/store', [RegisterController::class, 'store'])->name('register.store');
+
+    Route::get('/helpcenter',[footerController::class ,'helpcenter'])->name('helpcenter');
+    Route::get('/contactus',[footerController::class ,'contactus'])->name('contactus');
+    Route::get('/aboutus',[footerController::class ,'aboutus'])->name('aboutus');
+    Route::get('/howitworks',[footerController::class ,'howitworks'])->name('howitworks');
 
 });
 
