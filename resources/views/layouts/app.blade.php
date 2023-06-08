@@ -52,7 +52,7 @@
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
 
-                <a href="{{ route('tripsearch') }}" class="btn btn-outline-primary" role="button" aria-pressed="true">Yolculuk Ara</a>
+                <a href="{{ route('createtrip') }}" class="btn btn-outline-primary" role="button" aria-pressed="true">Yolculuk Oluştur</a>
 
                 @guest
                     <!-- Giriş Yapılmamışsa-->
@@ -71,6 +71,9 @@
                     @else
                         <!-- Giriş Yapılmışsa-->
                         <div class="navbar-brand w3-bar-item w3-button logo-image padding-1-12">
+                            @if(!Auth::user()->profile_image)
+                                <img src="{{ asset('images/emoji-smile-fill.svg') }}" class="rounded-circle" width="70">
+                            @endif
                             @if (Auth::user()->profile_image)
                                 <img src="{{ asset('storage/' . Auth::user()->profile_image) }}" class="img-fluid">
                             @endif
@@ -87,7 +90,7 @@
                                 <form id="logout-form-index" action="{{ route('index') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                <a class="dropdown-item" href="{{ route('tripsearch') }}">
+                                <a class="dropdown-item" href="{{ route('index') }}">
                                     {{ __('Yolculuklarım') }}
                                 </a>
                                 <form id="logout-form-journeys" action="{{ route('index') }}" method="POST" class="d-none">
@@ -123,7 +126,6 @@
 </div>
 
 <!-- Footer -->
-@if(Auth::check())
     <div class="container">
         <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
             <div class="col mb-3">
@@ -142,8 +144,8 @@
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Istanbul → Ankara</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Istanbul → Antalya</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Ankara→ Eskişehir</a></li>
-                    <li class="nav-item mb-2"><a href="{{route('tripsearch')}}" class="nav-link p-0 text-body-secondary">Yolculuk Ara</a></li>
-                    <li class="nav-item mb-2"><a href="{{route('index')}}" class="nav-link p-0 text-body-secondary">Yolculuk Oluştur</a></li>
+                    <li class="nav-item mb-2"><a href="{{route('index')}}" class="nav-link p-0 text-body-secondary">Yolculuk Ara</a></li>
+                    <li class="nav-item mb-2"><a href="{{route('createtrip')}}" class="nav-link p-0 text-body-secondary">Yolculuk Oluştur</a></li>
                 </ul>
             </div>
             <div class="col mb-3">
@@ -159,44 +161,7 @@
 
         </footer>
     </div>
-@endif
-@if(!Auth::check())
-<div class="container">
-    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-        <div class="col mb-3">
-            <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-            <p class="text-body-secondary">© BumaRide</p>
-        </div>
 
-        <div class="col mb-3">
-
-        </div>
-        <div class="col mb-3">
-            <h5>En sık kullanılan güzergahlar</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Istanbul → Ankara</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Istanbul → Antalya</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Ankara→ Eskişehir</a></li>
-                <li class="nav-item mb-2"><a href="{{route('tripsearch')}}" class="nav-link p-0 text-body-secondary">Yolculuk Ara</a></li>
-                <li class="nav-item mb-2"><a href="{{route('index')}}" class="nav-link p-0 text-body-secondary">Yolculuk Oluştur</a></li>
-            </ul>
-        </div>
-        <div class="col mb-3">
-            <h5>Hakkında</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="{{route('howitworks')}}" class="nav-link p-0 text-body-secondary">BumaRide Nasıl Çalışır?</a></li>
-                <li class="nav-item mb-2"><a href="{{route('aboutus')}}" class="nav-link p-0 text-body-secondary">Hakkımızda</a></li>
-                <li class="nav-item mb-2"><a href="{{route('helpcenter')}}" class="nav-link p-0 text-body-secondary">Yardım Merkezi</a></li>
-                <li class="nav-item mb-2"><a href="{{route('contactus')}}" class="nav-link p-0 text-body-secondary">Bize Ulaşın</a></li>
-            </ul>
-        </div>
-
-
-    </footer>
-</div>
-@endif
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

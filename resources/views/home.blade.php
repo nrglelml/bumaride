@@ -20,6 +20,7 @@
 
                 <div class="p-4">
                     <div class="img-circle text-center mb-3">
+
                         <form action="{{ route('profile.uploadImage') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('POST')

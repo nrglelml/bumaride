@@ -24,7 +24,7 @@
                         <p>BumaRide ile yolculuk paylaşımı çok kolay ve ücretsizdir! Tek yapman gereken aşağıdaki adımları izlemektir:</p>
                         <ol>
                             <li>Öncelikle hesabını oluştur veya giriş yap.</li>
-                            <li>"Yolculuk Paylaş" butonuna tıkla.</li>
+                            <li>"Yolculuk Oluştur" butonuna tıkla.</li>
                             <li>Gerekli bilgileri doldur (kalkış yeri, varış yeri, tarih, saat, vb.).</li>
                             <li>Yolculuğunu yayınla ve diğer kullanıcıların seninle iletişime geçmesini bekle.</li>
                         </ol>

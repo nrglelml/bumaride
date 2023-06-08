@@ -60,8 +60,8 @@
         <div class="step-number">2</div>
         <div class="step-content">
             <h3>Yolculuk Paylaş</h3>
-            <p>Hesabını oluşturduktan sonra, "Yolculuk Paylaş" butonuna tıklayarak planladığın yolculuğun detaylarını girebilirsin. Kalkış yeri, varış yeri, tarih, saat gibi bilgileri doldurarak yolculuğunu yayınla.</p>
-            <p>Yolculuk Paylaşmak  için <a href="{{route('index')}}">tıklayın.</a> </p>
+            <p>Hesabını oluşturduktan sonra, "Yolculuk Oluştur" butonuna tıklayarak planladığın yolculuğun detaylarını girebilirsin. Kalkış yeri, varış yeri, tarih, saat gibi bilgileri doldurarak yolculuğunu yayınla.</p>
+            <p>Yolculuk Oluşturmak  için <a href="{{route('createtrip')}}">tıklayın.</a> </p>
         </div>
     </div>
     <div class="step">

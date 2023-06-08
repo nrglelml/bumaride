@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\mailController;
 use App\Http\Controllers\footerController;
+use App\Http\Controllers\createTripController;
 
 
 Route::match(['get', 'post'], '/', function () {
@@ -22,9 +23,7 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
-Route::get('/tripsearch', function () {
-    return view('tripsearch');
-})->name('tripsearch');
+
 
 Auth::routes();
 
@@ -46,17 +45,11 @@ Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => 'profile'], fun
 });
 
 
-
-
-
-
 Route::post('/send' ,[mailController::class , 'send'])->name('send');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [LoginController::class, 'login']);
-
-
 
     Route::get('/register/create', [RegisterController::class, 'create'])->name('register.create');
     Route::post('/register/store', [RegisterController::class, 'store'])->name('register.store');
@@ -67,8 +60,16 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/howitworks',[footerController::class ,'howitworks'])->name('howitworks');
 
 });
+Route::get('/helpcenter',[footerController::class ,'helpcenter'])->name('helpcenter');
+Route::get('/contactus',[footerController::class ,'contactus'])->name('contactus');
+Route::get('/aboutus',[footerController::class ,'aboutus'])->name('aboutus');
+Route::get('/howitworks',[footerController::class ,'howitworks'])->name('howitworks');
+
 
 Route::middleware(['auth'])->group(function () {
     // Çıkış yapma rotası
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });
+Route::get('/createtrip' ,[createTripController::class, 'createTrip'])->name('createtrip');
+Route::post('/createtrip' ,[createTripController::class, 'createTrip'])->name('createtrip');
+Route::get('/createtrip', function () { return view('createtrip'); });

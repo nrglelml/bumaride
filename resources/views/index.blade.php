@@ -12,14 +12,71 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             body {
-                font-family: "Lato", sans-serif
+                font-family: "Lato", sans-serif;
+            }
+
+            .bilgi {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .bilgi .w3-container {
+                text-align: center;
+                margin-top: 20px;
+                background-color: #f2f2f2;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .bilgi .w3-row {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+            .bilgi .kutu1,
+            .bilgi .kutu2,
+            .bilgi .kutu3 {
+                width:300px;
+                height: 300px;
+                display: inline-block;
+                background-color: transparent;
+                flex: 1 1 300px;
+            }
+
+            .bilgi h3 {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .bilgi p {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+
+            .bilgi a {
+                color: #337ab7;
+                text-decoration: none;
+            }
+
+            .bilgi a:hover {
+                text-decoration: underline;
+            }
+
+            @media (max-width: 800px) {
+                .bilgi .w3-col {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                }
             }
         </style>
+
     </head>
 
     <body>
-
-
 
         <!-- Page content -->
         <div class="w3-content" style="max-width:2000px">
@@ -58,7 +115,28 @@
                 </div>
 
             </div>
+            <!-- The Bumaride bilgi section-->
+            <div class="bilgi">
+                <div class="w3-container w3-content w3-padding-64" style="max-width:1000px;">
+                    <div class="w3-row">
+                        <div class="kutu1">
+                            <h3>Seyahatini Ucuza Getir!</h3>
+                            <p>BumARide ile yolculuğunun masrafını ikiyeye bölerek üstelik yol arkadaşı edinerek yolculuğunu daha ucuz ve keyifli hale getirebilirsin.</p>
+                        </div>
 
+                        <div class="kutu2">
+                            <h3>Yol Arkadaşlarınla İletişimini Kolaylaştır!</h3>
+                            <p>BumARide ile yolculuk yapacağın yol arkadaşınla rahatça iletişime geçebilir ve yol arkadaşını puanlayabilirsin.</p>
+                        </div>
+
+                        <div class="kutu3">
+                            <h3>BumaRide'la Yolculuk Oluşturmak Çok Kolay!</h3>
+                            <p>Eğer bir aracın varsa gideceğin yeri ve tarihi belirledikten sonra rahatlıkla seyahat planını oluşturabilir ve yol arkadaşı bulma işini kolaylaştırabilirsin. Seyahat planı oluşturmak için <a href="{{route('createtrip')}}">tıkla.</a></p>
+                        </div>
+
+                </div>
+            </div>
+            </div>
 
             <!-- The Sıkça Sorulan Sorular Section -->
             <div class="w3-indigo" id="sss">
@@ -95,38 +173,6 @@
                 </div>
             </div>
 
-
-            <!-- The İletişim Section -->
-            <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-                <h2 class="w3-wide w3-center">İletişim</h2>
-                <p class="w3-opacity w3-center"><i>Sorunuz Mu Var?</i></p>
-                <div class="w3-row w3-padding-32">
-                    <div class="w3-col m6 w3-large w3-margin-bottom">
-                        <i class="fa fa-map-marker" style="width:30px"></i> İZMİR BUCA<br>
-                        <i class="fa fa-phone" style="width:30px"></i> Telefon: +090 555 555 55 55<br>
-                        <i class="fa fa-envelope" style="width:30px"> </i> E-posta:200290061@firat.edu.tr <br>
-                    </div>
-                    <div class="w3-col m6">
-                        <form action="/action_page.php" target="_blank">
-                            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                                <div class="w3-half">
-                                    <input class="w3-input w3-border" type="text" placeholder="İsminiz" required
-                                        name="Name">
-                                </div>
-                                <div class="w3-half">
-                                    <input class="w3-input w3-border" type="text" placeholder="E-postanız" required
-                                        name="Email">
-                                </div>
-                            </div>
-                            <input class="w3-input w3-border" type="text" placeholder="Mesajınız" required
-                                name="Message">
-                            <button class="w3-button w3-black w3-section w3-right" type="submit">Gönder</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- End Page Content -->
         </div>
 
 
