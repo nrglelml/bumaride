@@ -2,56 +2,6 @@
 
 @section('content')
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Otostop Seyahat Oluşturma Sayfası</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"],
-        input[type="date"],
-        textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        h2{
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -90,9 +40,9 @@
                             </div>
 
                         @elseif(session('error'))
-                            <span class="invalid-feedback" role="alert">
+                            <div class="alert alert-danger">
                                 {{ session('error') }}
-                            </span>
+                            </div>
                         @endif
 
                     </form>

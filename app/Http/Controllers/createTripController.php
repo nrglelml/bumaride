@@ -13,17 +13,20 @@ class createTripController extends Controller
         'departure' => 'required',
         'destination' => 'required',
         'date' => 'required',
+        'description'=> 'nullable',
     ]);
     if (Auth::check()) {
         $departure = $request->input('departure');
         $destination = $request->input('destination');
         $date = $request->input('date');
+        $description=$request->input('description');
 
 
         $trip = new Trip();
         $trip->departure = $departure;
         $trip->destination = $destination;
         $trip->date = $date;
+        $trip->description=$description;
 
 
         $trip->user_id = Auth::user()->id;
@@ -32,10 +35,10 @@ class createTripController extends Controller
         $trip->save();
 
 
-        return redirect()->back()->with('success', 'Yolculuk başarıyla oluşturuldu.');
+        return redirect()->route('mytrips')->with('success', 'Yolculuk başarıyla oluşturuldu.');
     }
 
 
-    return redirect()->route('login')->with('error', 'Yolculuk oluşturmak için giriş yapmanız gerekmektedir.');
+    return redirect()->route('register')->with('error', 'Yolculuk oluşturmak için kayıt olmanız gerekmektedir.');
 }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\mailController;
 use App\Http\Controllers\footerController;
 use App\Http\Controllers\createTripController;
+use App\Http\Controllers\MyTripsController;
 
 
 Route::match(['get', 'post'], '/', function () {
@@ -70,6 +71,12 @@ Route::middleware(['auth'])->group(function () {
     // Çıkış yapma rotası
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });
-Route::get('/createtrip' ,[createTripController::class, 'createTrip'])->name('createtrip');
-Route::post('/createtrip' ,[createTripController::class, 'createTrip'])->name('createtrip');
-Route::get('/createtrip', function () { return view('createtrip'); });
+
+
+Route::get('/mytrips', [MyTripsController::class, 'index'])->name('mytrips');
+
+Route::match(['get', 'post'], '/createtrip', [createTripController::class , 'createTrip'])->name('createtrip');
+Route::get('/createtrip', function () {
+    return view('createtrip');
+})->name('createtrip');
+
