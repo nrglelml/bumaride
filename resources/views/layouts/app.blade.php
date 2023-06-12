@@ -90,7 +90,7 @@
                                 <form id="logout-form-index" action="{{ route('index') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                <a class="dropdown-item" href="{{ route('index') }}">
+                                <a class="dropdown-item" href="{{ route('mytrips') }}">
                                     {{ __('Yolculuklarım') }}
                                 </a>
                                 <form id="logout-form-journeys" action="{{ route('index') }}" method="POST" class="d-none">

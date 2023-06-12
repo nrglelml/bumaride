@@ -27,6 +27,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="people_num">Yolculukta eklemek istediğiniz yolcu sayısı:</label>
+                            <input type="number" name="people_num" id="people_num" min="1" max="10"  required class="form-control" >
+
+
+                        <div class="form-group">
                             <label for="description">Açıklama:</label>
                             <textarea id="description" name="description" rows="4" class="form-control"></textarea>
                         </div>

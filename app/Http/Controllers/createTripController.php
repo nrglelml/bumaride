@@ -13,6 +13,7 @@ class createTripController extends Controller
         'departure' => 'required',
         'destination' => 'required',
         'date' => 'required',
+        'people_num' => 'required',
         'description'=> 'nullable',
     ]);
     if (Auth::check()) {
@@ -20,6 +21,7 @@ class createTripController extends Controller
         $destination = $request->input('destination');
         $date = $request->input('date');
         $description=$request->input('description');
+        $people_num=$request->input('people_num');
 
 
         $trip = new Trip();
@@ -27,6 +29,7 @@ class createTripController extends Controller
         $trip->destination = $destination;
         $trip->date = $date;
         $trip->description=$description;
+        $trip->people_num=$people_num;
 
 
         $trip->user_id = Auth::user()->id;

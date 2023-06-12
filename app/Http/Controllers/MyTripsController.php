@@ -15,4 +15,13 @@ class MyTripsController extends Controller
 
         return view('mytrips', compact('trips'));
     }
+    public function destroy($id)
+    {
+        $trip = Trip::findOrFail($id);
+        $trip->delete();
+
+        return redirect()->route('mytrips')->with('success', 'Yolculuk başarıyla kaldırıldı.');
+    }
+
+
 }

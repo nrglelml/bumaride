@@ -75,20 +75,22 @@ class ProfileController extends Controller
         return redirect()->back()->with('success', 'Hakkında bilgisi güncellendi.');
     }
 
-    public function addVehicle(Request $request)
+    public function vehicle_info(Request $request)
     {
         $user = Auth::user();
 
-        $request->validate([
-            'vehicle_name' => 'required|string|max:255',
-            'vehicle_type' => 'required|string|max:255',
-            'vehicle_plate' => 'required|string|max:10|min:4',
-        ]);
+        $user->vehicle_info = [
+            'brand' => $request->input('vehicle_brand'),
+            'model' => $request->input('vehicle_model'),
+            'year' => $request->input('vehicle_year'),
+            'capacity' => $request->input('vehicle_capacity'),
+        ];
 
-        // Taşıt bilgisi ekleme işlemlerini burada gerçekleştirin
+        $user->save();
 
         return redirect()->back()->with('success', 'Taşıt bilgisi eklendi.');
     }
+
 
     public function updateAccount(Request $request)
     {

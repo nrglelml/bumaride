@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\travelController;
 use App\Http\Controllers\mailController;
 use App\Http\Controllers\footerController;
 use App\Http\Controllers\createTripController;
@@ -35,7 +35,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => 'profile'], function() {
     Route::get('/', [ProfileController::class, 'index'])->name('profile');
     Route::put('/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
-    Route::delete('/deleteImage' ,[ProfileController::class , 'updateProfile'])->name('profile.update');
+    Route::match(['get', 'post'] ,'/vehicle_info',[ProfileController::class, 'vehicle_info'])->name('profile.vehicle_info');
     Route::delete('/delete', [ProfileController::class, 'deleteAccount'])->name('profile.delete');
     Route::get('/about', [ProfileController::class, 'viewAbout'])->name('profile.about');
     Route::get('/comments', [ProfileController::class, 'viewComments'])->name('profile.comments');
@@ -74,9 +74,14 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/mytrips', [MyTripsController::class, 'index'])->name('mytrips');
+Route::delete('/mytrips/{id}/destroy', [MyTripsController::class, 'destroy'])->name('mytrips.destroy');
+
 
 Route::match(['get', 'post'], '/createtrip', [createTripController::class , 'createTrip'])->name('createtrip');
 Route::get('/createtrip', function () {
     return view('createtrip');
 })->name('createtrip');
 
+//Route::post('/travels', [TravelController::class ,'index'])->name('travels');
+//Route::match(['get', 'post'], '/travels', [TravelController::class, 'search'])->name('travels');
+Route::post('/travels', [TravelController::class, 'search'])->name('travels');

@@ -14,6 +14,8 @@
                                 <th>Varış Yeri</th>
                                 <th>Tarih</th>
                                 <th>Açıklama</th>
+                                <th>Yolcu Sayısı</th>
+                                <th>İşlemler</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -23,6 +25,21 @@
                                     <td>{{ $trip->destination }}</td>
                                     <td>{{ $trip->date }}</td>
                                     <td>{{ $trip->description }}</td>
+                                    <td>{{ $trip->people_num }}</td>
+                                    <td>
+                                        <form action="{{ route('mytrips.destroy', $trip->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Kaldır</button>
+                                            @if(session('success'))
+                                                <div class="form-group row mt-3">
+                                                    <div class="col-md-6 offset-md-4">
+                                                        <div class="alert alert-success">{{ session('success') }}</div>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

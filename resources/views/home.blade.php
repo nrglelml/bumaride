@@ -58,20 +58,24 @@
                         <i class="fa fa-key text-center mr-1"></i>
                         Şifre
                     </a>
+                    <a class="nav-link" id="vehicle_info-tab" data-toggle="pill" href="#vehicle_info" role="tab" aria-controls="vehicle_info" aria-selected="false">
+                        <i class="fa fa-car text-center mr-1"></i>
+                        Taşıt Bilgileri
+                    </a>
                     <a class="nav-link" id="comments-tab" data-toggle="pill" href="#comments" role="tab" aria-controls="comments" aria-selected="false">
-                        <i class="fa fa-bell text-center mr-1"></i>
+                        <i class="fa fa-comment text-center mr-1"></i>
                         Yorum İşlemleri
                     </a>
                     <a class="nav-link" id="remove-tab" data-toggle="pill" href="#remove" role="tab" aria-controls="remove" aria-selected="false">
-                        <i class="fa fa-tv text-center mr-1"></i>
+                        <i class="fa fa-remove text-center mr-1"></i>
                         Hesabı Kaldır
                     </a>
                 </div>
             </div>
-                <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-            <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+            <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
 
                     <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
                         <h3 class="mb-4">Kişisel Bilgiler</h3>
@@ -202,7 +206,53 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="vehicle_info" role="tabpanel" aria-labelledby="vehicle_info-tab">
+                        <h3 class="mb-4">Taşıt Bilgilerini Paylaş</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <form method="POST" action="{{ route('profile.vehicle_info') }}">
+                                        @csrf
 
+                                        <div class="form-group">
+                                            <label for="vehicle_brand">Araç Markası</label>
+                                            <input type="text" name="vehicle_brand" id="vehicle_brand" value="{{ isset($user->vehicle_info['brand']) ? $user->vehicle_info['brand'] : '' }}" class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vehicle_model">Araç Modeli</label>
+                                            <input type="text" name="vehicle_model" id="vehicle_model" value="{{ isset($user->vehicle_info['model']) ? $user->vehicle_info['model'] : '' }}" class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vehicle_year">Araç Yılı</label>
+                                            <input type="text" name="vehicle_year" id="vehicle_year" value="{{ isset($user->vehicle_info['year']) ? $user->vehicle_info['year'] : '' }}" class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vehicle_capacity">Araç Kapasitesi</label>
+                                            <input type="text" name="vehicle_capacity" id="vehicle_capacity" value="{{ isset($user->vehicle_info['capacity']) ? $user->vehicle_info['capacity'] : '' }}" class="form-control">
+
+                                        </div>
+                                        <div class="form-group row mb-0">
+                                            <div class="col-md-6 offset-md-4">
+                                                <button type="submit" class="btn btn-primary">Güncelle</button>
+                                                <a href="{{ route('profile') }}" class="btn btn-secondary">İptal</a>
+                                            </div>
+                                        </div>
+
+                                        @if(session('success'))
+                                            <div class="form-group row mt-3">
+                                                <div class="col-md-6 offset-md-4">
+                                                    <div class="alert alert-success">{{ session('success') }}</div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- BURAYA YORUMLARIN GÖRÜNMESİ KISMI GELECEK-->
                     <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
                         <h3 class="mb-4">Yorumlar</h3>
@@ -248,8 +298,8 @@
                             </div>
                         </div>
                     </div>
-            </div>
-                </form>
+                </div>
+            </form>
         </div>
 
     </div>
