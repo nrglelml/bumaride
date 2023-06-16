@@ -4,25 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Travel;
+use App\Models\Trip;
 
 class TravelController extends Controller
 {
     public function index()
     {
-        $travel = Travel::all();
+
+        $travel = Trip::all();
 
         return view('travel', compact('travel'));
     }
+
     public function search(Request $request)
     {
+
         $departure = $request->input('departure');
         $destination = $request->input('destination');
         $date = $request->input('date');
-
-        $travels = Travel::where('departure', 'like', "%$departure%")
+        $travels = Trip::where('departure', 'like', "%$departure%")
             ->where('destination', 'like', "%$destination%")
-            ->whereDate('travel_date', $date)
+            ->whereDate('date', $date)
             ->get();
 
         if ($travels->isEmpty()) {
@@ -31,9 +33,4 @@ class TravelController extends Controller
             return view('travel')->with('travel', $travels);
         }
     }
-
-
-
 }
-
-

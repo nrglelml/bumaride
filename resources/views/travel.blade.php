@@ -1,4 +1,3 @@
-<!-- travel.blade.php -->
 @extends('layouts.app')
 
 @section('content')
@@ -10,7 +9,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>Kullanıcı</th>
+                            <th>Yolculuk Sahibi</th>
                             <th>Kalkış Yeri</th>
                             <th>Varış Yeri</th>
                             <th>Tarih</th>
@@ -24,7 +23,7 @@
                                 <td>{{ $travel->user->name }}</td>
                                 <td>{{ $travel->departure }}</td>
                                 <td>{{ $travel->destination }}</td>
-                                <td>{{ $travel->travel_date }}</td>
+                                <td>{{ $travel->date }}</td>
                                 <td>{{ $travel->description }}</td>
                                 <td>{{ $travel->people_num }}</td>
                             </tr>

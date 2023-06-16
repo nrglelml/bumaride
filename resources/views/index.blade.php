@@ -91,14 +91,14 @@
         <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
             <form action="{{ route('travels') }}" method="POST" class="nosubmit search-container">
                 @csrf
-                <div class="departure">
-                    <input class="nosubmit departure" type="search" placeholder="Kalkış Yeri">
+                <div class="form-control">
+                    <input type="text" class="form-control" id="departure" name="departure" placeholder="Kalkış Yeri">
                 </div>
-                <div class="target">
-                    <input class="nosubmit target" type="search" placeholder="Varış Yeri">
+                <div class="form-control">
+                    <input type="text" class="form-control" id="destination" name="destination" placeholder="Varış Yeri">
                 </div>
-                <div class="datePicker">
-                    <input class="nosubmit date" type="date">
+                <div class="form-control">
+                    <input type="date" class="form-control" id="date" name="date">
                 </div>
                 <button class="search-btn" onclick="ara()">
                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
@@ -112,6 +112,9 @@
                     </svg>
                 </button>
             </form>
+            @if (session('message'))
+                <p>{{ session('message')}}</p>
+            @endif
         </div>
 
     </div>

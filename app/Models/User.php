@@ -26,7 +26,7 @@ class User extends Authenticatable
     }
     public function travels()
     {
-        return $this->hasMany(Travel::class);
+        return $this->hasMany(Trip::class);
     }
 
     protected $table = 'users';
