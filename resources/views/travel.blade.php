@@ -26,6 +26,12 @@
                                 <td>{{ $travel->date }}</td>
                                 <td>{{ $travel->description }}</td>
                                 <td>{{ $travel->people_num }}</td>
+                                <td>
+                                    <form action="{{ route('index') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary">Talep Oluştur</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

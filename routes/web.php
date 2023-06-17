@@ -10,7 +10,6 @@ use App\Http\Controllers\footerController;
 use App\Http\Controllers\createTripController;
 use App\Http\Controllers\MyTripsController;
 
-
 Route::match(['get', 'post'], '/', function () {
     return view('index');
 })->name('index');
@@ -76,7 +75,6 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/mytrips', [MyTripsController::class, 'index'])->name('mytrips');
 Route::delete('/mytrips/{id}/destroy', [MyTripsController::class, 'destroy'])->name('mytrips.destroy');
 
-
 Route::match(['get', 'post'], '/createtrip', [createTripController::class , 'createTrip'])->name('createtrip');
 Route::get('/createtrip', function () {
     return view('createtrip');
@@ -85,3 +83,5 @@ Route::get('/createtrip', function () {
 //Route::post('/travels', [TravelController::class ,'index'])->name('travels');
 //Route::match(['get', 'post'], '/travels', [TravelController::class, 'search'])->name('travels');
 Route::post('/travels', [TravelController::class, 'search'])->name('travels');
+
+

@@ -96,6 +96,12 @@
                                 <form id="logout-form-journeys" action="{{ route('index') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
+                                <a class="dropdown-item" href="{{ route('inde') }}">
+                                    {{ __('Bildirimler') }}
+                                </a>
+                                <form id="logout-form-index" action="{{ route('index') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                                 <a class="dropdown-item" href="{{ route('profile') }}">
                                     {{ __('Profilim') }}
                                 </a>
