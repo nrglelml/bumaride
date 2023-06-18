@@ -9,6 +9,7 @@ use App\Http\Controllers\mailController;
 use App\Http\Controllers\footerController;
 use App\Http\Controllers\createTripController;
 use App\Http\Controllers\MyTripsController;
+use App\Http\Controllers\NotificationController;
 
 Route::match(['get', 'post'], '/', function () {
     return view('index');
@@ -80,8 +81,15 @@ Route::get('/createtrip', function () {
     return view('createtrip');
 })->name('createtrip');
 
-//Route::post('/travels', [TravelController::class ,'index'])->name('travels');
+Route::get('/travels', [travelController::class ,'index'])->name('travels');
 //Route::match(['get', 'post'], '/travels', [TravelController::class, 'search'])->name('travels');
-Route::post('/travels', [TravelController::class, 'search'])->name('travels');
+Route::post('/travels', [travelController::class, 'search'])->name('travels');
 
 
+Route::group(['namespace' => 'App\Http\Controllers', 'prefix' => 'notifications'], function() {
+Route::get('/',[NotificationController::class, 'index'])->name('notifications');
+Route::post('/travels/{id}/create-notification', [NotificationController::class, 'createNotification'])->name('create.notification');
+Route::post('/accept',[NotificationController::class, 'accept'])->name('notifications.accept');
+Route::post('/deny',[NotificationController::class, 'deny'])->name('notifications.deny');
+
+});

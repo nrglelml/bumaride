@@ -27,10 +27,22 @@
                                 <td>{{ $travel->description }}</td>
                                 <td>{{ $travel->people_num }}</td>
                                 <td>
-                                    <form action="{{ route('index') }}" method="POST">
-                                        @csrf
+                                    <form action="{{ route('create.notification',  ['id' => $travel->id]) }}" method="POST">
+
+                                    @csrf
                                         <button type="submit" class="btn btn-primary">Talep Oluştur</button>
                                     </form>
+                                    @if (session('success'))
+                                        <div class="alert alert-success mt-3">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+
+                                    @if (session('error'))
+                                        <div class="alert alert-danger mt-3">
+                                            {{ session('error') }}
+                                        </div>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
