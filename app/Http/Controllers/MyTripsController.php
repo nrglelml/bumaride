@@ -22,20 +22,23 @@ class MyTripsController extends Controller
     {
         $trip = Trip::findOrFail($id);
 
-        TripHistory::create([
+        $historyData = [
             'user_id' => Auth::user()->id,
+            'trip_id' => $trip->id,
             'departure' => $trip->departure,
             'destination' => $trip->destination,
-            'date' => $trip->date,
+            'date' => date('d-m-y', strtotime($trip->date)),
             'description' => $trip->description,
             'people_num' => $trip->people_num,
-
-        ]);
+        ];
 
         $trip->delete();
 
+        TripHistory::create($historyData);
+
         return redirect()->route('mytrips')->with('success', 'Yolculuk başarıyla kaldırıldı.');
     }
+
 
 
 

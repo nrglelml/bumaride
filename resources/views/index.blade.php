@@ -231,6 +231,10 @@
         }
     } */
 </script>
+<script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById("date").setAttribute('min', today);
+</script>
 <script src="https://kit.fontawesome.com/b96ee86dee.js" crossorigin="anonymous"></script>
 
 

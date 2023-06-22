@@ -17,9 +17,9 @@ class CreateTripHistoryTable extends Migration
             $table->text('description')->nullable()->default(''); ;
             $table->integer('people_num')->unsigned()->default(1);
             $table->unsignedBigInteger('user_id')->default(0);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('travel_id')->references('id')->on('trips')->onDelete('cascade');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 

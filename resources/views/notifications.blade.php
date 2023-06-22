@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Bildirimler</h1>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <h1>Bildirimler</h1>
                 <!-- Tab content -->
                 <div id="trips" class="tabcontent">
                     <div class="card">

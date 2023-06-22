@@ -10,6 +10,7 @@ use App\Http\Controllers\footerController;
 use App\Http\Controllers\createTripController;
 use App\Http\Controllers\MyTripsController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\PusherController;
 
 Route::match(['get', 'post'], '/', function () {
     return view('index');
@@ -92,4 +93,8 @@ Route::post('/travels/{id}/create-notification', [NotificationController::class,
 Route::post('/accept',[NotificationController::class, 'accept'])->name('notifications.accept');
 Route::post('/deny',[NotificationController::class, 'deny'])->name('notifications.deny');
 
+
 });
+Route::get('/pusher',[PusherController::class , 'index'])->name('pusher');
+Route::post('pusher/broadcast' , [PusherController::class , 'broadcast'])->name('broadcast');
+Route::post('/pusher/receive', [PusherController::class , 'receive'])->name('receive');

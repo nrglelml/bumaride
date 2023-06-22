@@ -26,7 +26,7 @@ class NotificationController extends Controller
         $user = $travel->user;
 
         if ($user) {
-            // Bildirim oluşturma işlemleri
+
 
             $notification = new RequestNotification($user);
             $user->notify($notification);
@@ -45,17 +45,17 @@ class NotificationController extends Controller
         $notificationId = $request->input('id');
         $user = auth()->user();
 
-        // Bildirimi bul ve işaretle
+
         $notification = $user->unreadNotifications->where('id', $notificationId)->first();
         if ($notification) {
             $notification->markAsRead();
 
-            // İsteği kabul etme işlemleri
 
-            return redirect()->route('index')->with('success', 'Yolculuğunuzu planlamaya başlayın');
+
+            return redirect()->route('pusher')->with('success', 'Yolculuğunuzu planlamaya başlayın');
         }
 
-        // Eğer bildirim bulunamazsa hata döndür
+
         return redirect()->back()->with('error', 'Bildirim bulunamadı.');
     }
 
@@ -65,18 +65,15 @@ class NotificationController extends Controller
         $notificationId = $request->input('id');
         $user = auth()->user();
 
-        // Bildirimi bul ve işaretle
+
         $notification = $user->unreadNotifications->where('id', $notificationId)->first();
 
         if ($notification) {
             $notification->markAsRead();
 
-            // İsteği reddetme işlemleri
-
-            // TripHistory tablosuna kaydet
             if (isset($notification->data['notification_id'])) {
                 TripHistory::create([
-                    'travel_id' => $notification->data['notification_id'], // Bildirim verisinden travel_id'yi al
+                    'travel_id' => $notification->data['notification_id'],
                     'user_id' => $user->id,
                     'departure' => $notification->departure,
                     'destination' => $notification->destination,
@@ -91,8 +88,7 @@ class NotificationController extends Controller
             return redirect()->back()->with('error', 'Bildirim verisinde travel_id bulunamadı.');
         }
 
-        // Eğer bildirim bulunamazsa hata döndür
-        //return response()->json(['error' => 'Bildirim bulunamadı'], 404);
+
     }
 
 }
