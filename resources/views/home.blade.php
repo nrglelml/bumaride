@@ -25,22 +25,22 @@
                             @csrf
                             @method('POST')
                             <div class="mb-3">
-                                <label for="profile_image">Profil Resmi</label>
-                                <input type="file" class="form-control-file" id="profile_image" name="profile_image">
+                                <label for="avatar">Profil Resmi</label>
+                                <input type="file" class="form-control-file" id="avatar" name="avatar">
                             </div>
                             <button type="submit" class="btn btn-primary">Güncelle</button>
                         </form>
                         <form action="{{ route('profile.deleteImage') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('DELETE')
-                            @if (Auth()->user()->profile_image)
+                            @if (Auth()->user()->avatar)
                                 <div class="mb-3">
-                                    <img src="{{ asset('storage/' . Auth()->user()->profile_image) }}" alt="Profil Resmi" class="rounded-circle" width="100">
+                                    <img src="{{ asset('storage/' . Auth()->user()->avatar) }}" alt="Profil Resmi" class="rounded-circle" width="100">
                                     <button type="submit" class="btn btn-danger mt-2">Profil Resmini Kaldır</button>
                                 </div>
                             @endif
 
-                            @error('profile_image')
+                            @error('avatar')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </form>

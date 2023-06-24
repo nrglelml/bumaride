@@ -17,6 +17,7 @@ class NotificationController extends Controller
     {
         $notifications = Auth::user()->unreadNotifications;
         //dd($notifications);
+
         return view('notifications', compact('notifications'));
     }
 
@@ -52,7 +53,7 @@ class NotificationController extends Controller
 
 
 
-            return redirect()->route('pusher')->with('success', 'Yolculuğunuzu planlamaya başlayın');
+            return redirect()->route('chatify')->with('success', 'Yolculuğunuzu planlamaya başlayın');
         }
 
 

@@ -42,7 +42,7 @@ class User extends Authenticatable
          'phone_number',
          'password',
          'about',
-         'profile_image',
+         'avatar',
          'vehicle_info',
     ];
 

@@ -71,11 +71,11 @@
                     @else
                         <!-- Giriş Yapılmışsa-->
                         <div class="navbar-brand w3-bar-item w3-button logo-image padding-1-12">
-                            @if(!Auth::user()->profile_image)
+                            @if(!Auth::user()->avatar)
                                 <img src="{{ asset('images/emoji-smile-fill.svg') }}" class="rounded-circle" width="70">
                             @endif
-                            @if (Auth::user()->profile_image)
-                                <img src="{{ asset('storage/' . Auth::user()->profile_image) }}" class="img-fluid">
+                            @if (Auth::user()->avatar)
+                                <img src="{{ asset('storage/' . Auth::user()->avatar) }}" class="img-fluid">
                             @endif
                         </div>
                         <li class="nav-item dropdown">
@@ -98,6 +98,12 @@
                                 </form>
                                 <a class="dropdown-item" href="{{ route('notifications') }}">
                                     {{ __('Bildirimler') }}
+                                </a>
+                                <form id="logout-form-index" action="{{ route('index') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                                <a class="dropdown-item" href="{{ route('chatify') }}">
+                                    {{ __('Mesajlar') }}
                                 </a>
                                 <form id="logout-form-index" action="{{ route('index') }}" method="POST" class="d-none">
                                     @csrf

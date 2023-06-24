@@ -28,7 +28,7 @@ class ProfileController extends Controller
             'phone_number' => 'nullable|string|max:255',
             'password' => 'nullable|string|min:8|confirmed',
             'about' => 'nullable|string|max:300',
-            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
 
@@ -42,10 +42,10 @@ class ProfileController extends Controller
             $user->password = Hash::make($request->password);
         }
 
-        if ($request->hasFile('profile_image')) {
-            $profileImage = $request->file('profile_image');
-            $imagePath = $profileImage->store('profile_images', 'public');
-            $user->profile_image = $imagePath;
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('profile_image');
+            $imagePath = $avatar->store('profile_images', 'public');
+            $user->avatar = $imagePath;
         }
 
         $user->save();
@@ -92,31 +92,7 @@ class ProfileController extends Controller
     }
 
 
-    public function updateAccount(Request $request)
-    {
-        $user = Auth::user();
 
-        $request->validate([
-            'username' => 'required|string|max:255|unique:users,username,' . $user->id,
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'phone_number' => 'required|string|max:255',
-            'password' => 'nullable|string|min:8|confirmed',
-        ]);
-
-        $user->username = $request->username;
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->phone_number = $request->phone_number;
-
-        if ($request->password) {
-            $user->password = Hash::make($request->password);
-        }
-
-        $user->save();
-
-        return redirect()->back()->with('success', 'Hesap bilgileri güncellendi.');
-    }
 
     public function viewComments()
     {
@@ -132,13 +108,13 @@ class ProfileController extends Controller
         $user = Auth::user();
 
         $request->validate([
-            'profile_image' => 'required|image|mimes:jpeg,png,jpg|min:200',
+            'avatar' => 'required|image|mimes:jpeg,png,jpg|min:400',
         ]);
 
-        if ($request->hasFile('profile_image')) {
-            $profileImage = $request->file('profile_image');
-            $imagePath = $profileImage->store('profile_images', 'public');
-            $user->profile_image = $imagePath;
+        if ($request->hasFile('avatar')) {
+            $avatar= $request->file('avatar');
+            $imagePath = $avatar->store('avatar', 'public');
+            $user->avatar = $imagePath;
             $user->save();
         }
 
@@ -148,9 +124,9 @@ class ProfileController extends Controller
     public function deleteProfileImage()
     {
         $user = Auth::user();
-        if ($user->profile_image) {
-            Storage::delete($user->profile_image);
-            $user->profile_image = null;
+        if ($user->avatar) {
+            Storage::delete($user->avatar);
+            $user->avatar = null;
             $user->save();
         }
         else{

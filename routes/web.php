@@ -95,6 +95,3 @@ Route::post('/deny',[NotificationController::class, 'deny'])->name('notification
 
 
 });
-Route::get('/pusher',[PusherController::class , 'index'])->name('pusher');
-Route::post('pusher/broadcast' , [PusherController::class , 'broadcast'])->name('broadcast');
-Route::post('/pusher/receive', [PusherController::class , 'receive'])->name('receive');

@@ -65,9 +65,9 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="profile_image" class="form-label">Profil Resmi</label>
-                    <input type="file" class="form-control" id="profile_image" name="profile_image">
-                    @error('profile_image')
+                    <label for="avatar" class="form-label">Profil Resmi</label>
+                    <input type="file" class="form-control" id="avatar" name="avatar">
+                    @error('avatar')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>

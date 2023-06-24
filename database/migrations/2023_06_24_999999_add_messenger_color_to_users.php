@@ -4,27 +4,31 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class AddMessengerColorToUsers extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->text('about')->nullable();
-            $table->string('vehicle_info')->nullable();
+            if (!Schema::hasColumn('users', 'messenger_color')) {
+                $table->string('messenger_color')->nullable();
+            }
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('about');
-            $table->dropColumn('vehicle_info');
+            $table->dropColumn('messenger_color');
         });
     }
-};
+}
