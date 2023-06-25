@@ -71,6 +71,7 @@ Proje herhangi bir yolculukta kendine bir yol arkadaşı arayan ya da otostopla 
 <li> •	Mysql veritabanı yönetim sistemi üzerinden işlem sağlanmıştır </li>
 <li> •  Kayıt ol ve giriş yap kısımları Laravel UI paketi üzerinden sağlanmıştır </li>
 <li> •  Kullanıcı dostu olması açısından tüm özen ve gereklilikler sağlanmıştır </li>
+<li> •  Chatify gereklidir </li>
 </ul>
 </p> 
 ## Nasıl kurulur ?     
@@ -80,6 +81,7 @@ Proje herhangi bir yolculukta kendine bir yol arkadaşı arayan ya da otostopla 
 <li> IDE'nizin terminaline "composer install" denerek bilgisayarınıza kurulur </li>
 <li> "cp .env.example .env" komutu ile env dosyasına kopyalanır </li>
 <li> "php artisan key:generate" komutu ile env dosyasında ki APP_KEY değeri otomatik olarak oluşturulur </li>
+<li> sırasıyla "composer require munafio/chatify" ve "php artisan chatify:install" ile chatify kurulur. </li>
 <li> Veritabanınızın localhostuna girip bumaride adında bir veritabanı oluşturun </li>
 <li> Daha sonra "php artisan migrate" komutuyla projede hazır olarak gelen tabloyu veritabanınıza ekleyin </li>
 <li> Bu şekilde projeyi bilgisayarınıza rahatlıkla yükleyebilirsiniz </li>
